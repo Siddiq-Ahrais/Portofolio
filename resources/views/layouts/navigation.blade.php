@@ -15,6 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.*')">
+                        {{ __('Proyek') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.messages.index')" :active="request()->routeIs('admin.messages.*')">
+                        {{ __('Pesan') }}
+                        @php $unreadCount = \App\Models\Message::unread()->count(); @endphp
+                        @if ($unreadCount > 0)
+                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-white bg-red-500 rounded-full">
+                                {{ $unreadCount }}
+                            </span>
+                        @endif
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +83,19 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.*')">
+                {{ __('Proyek') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.messages.index')" :active="request()->routeIs('admin.messages.*')">
+                {{ __('Pesan') }}
+                @if ($unreadCount ?? \App\Models\Message::unread()->count() > 0)
+                    <span class="ml-1.5 inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-white bg-red-500 rounded-full">
+                        {{ $unreadCount ?? \App\Models\Message::unread()->count() }}
+                    </span>
+                @endif
             </x-responsive-nav-link>
         </div>
 
