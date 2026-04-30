@@ -10,10 +10,6 @@ class AdminSeeder extends Seeder
 {
     /**
      * Seed the admin user account.
-     * 
-     * 
-     * 
-     * 
      */
     public function run(): void
     {
