@@ -15,65 +15,7 @@
     <!-- Styles & Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/react/project-filter.jsx', 'resources/js/react/contact-form.jsx'])
 
-    <style>
-        body { font-family: 'Inter', sans-serif; }
 
-        /* Custom gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Animated gradient background */
-        .hero-gradient {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #1e1b4b, #172554);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Floating dots pattern */
-        .dots-pattern {
-            background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        /* Glow effect */
-        .glow {
-            box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
-        }
-
-        /* Fade in animation */
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in-up-delay-1 { animation-delay: 0.2s; }
-        .fade-in-up-delay-2 { animation-delay: 0.4s; }
-        .fade-in-up-delay-3 { animation-delay: 0.6s; }
-    </style>
 </head>
 <body class="bg-gray-950 text-gray-100 antialiased">
 
